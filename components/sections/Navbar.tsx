@@ -3,12 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { navbarConfig } from '@/constants/navigation';
+import { Container } from '@/components/ui/Container';
 
-/**
- * Renders the main navigation bar with responsive desktop and mobile layouts.
- * Includes logo, navigation links, and CTA button with mobile hamburger menu.
- */
-export function Navbar(): JSX.Element {
+export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const toggleMenu = (): void => {
@@ -17,7 +14,7 @@ export function Navbar(): JSX.Element {
 
   return (
     <nav className="bg-zinc-950 text-white sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <Container className="py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <Link
@@ -96,7 +93,7 @@ export function Navbar(): JSX.Element {
             </div>
           </div>
         )}
-      </div>
+      </Container>
     </nav>
   );
 }

@@ -4,11 +4,11 @@ export const navbarConfig: NavbarConfig = {
   logo: 'Barber House',
   links: [
     {
-      label: 'Home',
+      label: 'Accueil',
       href: '#',
     },
     {
-      label: 'About Us',
+      label: 'À Propos',
       href: '#about',
     },
     {
@@ -21,7 +21,7 @@ export const navbarConfig: NavbarConfig = {
     },
   ],
   ctaButton: {
-    label: 'Book Now',
+    label: 'Réserver',
     href: '#',
   },
 };

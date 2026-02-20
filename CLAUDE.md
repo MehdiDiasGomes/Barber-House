@@ -27,12 +27,22 @@ bun run lint
 ### Project Layout
 
 - **`/app`** - Next.js app directory containing all routes and layout
-  - `layout.tsx` - Root layout with global metadata and font configuration (Geist Sans & Geist Mono)
-  - `page.tsx` - Home page component (currently contains create-next-app template)
+  - `layout.tsx` - Root layout with global metadata and font configuration
+  - `page.tsx` - Home page component
   - `globals.css` - Global styles with Tailwind CSS
   - `favicon.ico` - Application favicon
 
-- **`/public`** - Static assets (SVGs, images)
+- **`/public`** - Static assets
+  - `/images/hero/` - Hero section images (bg.jpg)
+  - `/images/sections/` - Other section images
+
+- **`/components`** - React components
+  - `/ui/` - Reusable UI components (Icon, etc.)
+  - `/sections/` - Layout sections (Navbar, etc.)
+
+- **`/constants`** - Application constants and configuration
+
+- **`/types`** - TypeScript type definitions
 
 ### Tech Stack Details
 
@@ -69,6 +79,12 @@ import Layout from "@/app/layout";
 ### Styling
 
 The project uses **Tailwind CSS v4** with the new PostCSS plugin. Global styles are in `app/globals.css`. Use Tailwind utility classes for component styling.
+
+**IMPORTANT:** No border radius on this project. Do NOT use:
+- `rounded`, `rounded-sm`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-full`
+- Any variant of border-radius
+
+All components must have sharp corners (0 radius).
 
 ### Font Optimization
 
@@ -166,10 +182,22 @@ git commit -m "♻️ refactor: extract navigation data to constants"
    - **NO inline comments** anywhere in the code
    - Use **TSDoc** comments ONLY for:
      - Complex functions or functions with multiple steps
-     - Components (describe what the component does)
+     - Do NOT comment component functions (components that render JSX/HTML)
    - Do NOT comment simple variables, interfaces, or straightforward functions
    - TSDoc must be concise and clear in English
    - TSDoc format: `/** Description */` for single-line, `/** ... */` for multi-line
+
+5. **React Components**
+   - **Do NOT use JSX.Element return type** - Let TypeScript infer the type
+   - Component function example:
+     ```typescript
+     export function Hero() {
+       return (
+         <section>...</section>
+       );
+     }
+     ```
+   - Do NOT add TSDoc comments on component functions (the JSX is self-documenting)
 
 ### TSDoc Examples
 

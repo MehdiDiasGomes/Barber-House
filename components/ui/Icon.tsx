@@ -7,7 +7,7 @@ export function Icon({
   color = 'currentColor',
   className,
   ariaLabel,
-}: IconProps): JSX.Element {
+}: IconProps) {
   return (
     <IconComponent
       size={size}
