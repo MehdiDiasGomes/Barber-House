@@ -86,6 +86,44 @@ The project uses **Tailwind CSS v4** with the new PostCSS plugin. Global styles 
 
 All components must have sharp corners (0 radius).
 
+### Color Palette (Centralized)
+
+All colors are defined as CSS variables in `:root` and mapped to Tailwind colors via `@theme`. **NEVER hardcode color names in components** - always use the semantic color names:
+
+**Brand Colors:**
+- `primary` - #1a1a1a (dark primary color for navbar, text)
+- `secondary` - #d4af37 (gold/amber accent color)
+
+**Semantic Text Colors:**
+- `text-primary` - #000000 (main text)
+- `text-secondary` - #6b7280 (secondary text, muted)
+- `text-light` - #ffffff (light text for dark backgrounds)
+- `text-muted` - #9ca3af (disabled/faint text)
+
+**Semantic Background Colors:**
+- `bg-primary` - #ffffff (main background)
+- `bg-secondary` - #f9fafb (secondary background, light gray)
+- `bg-dark` - #111827 (dark background for footer)
+
+**Gray Scale:**
+- `gray-200` through `gray-700` - Various neutral grays
+
+**Usage Example:**
+```typescript
+// ✅ CORRECT - Use semantic color names
+<div className="bg-bg-primary text-text-primary">
+  <h3 className="text-secondary">Title</h3>
+  <p className="text-gray-500">Subtitle</p>
+</div>
+
+// ❌ WRONG - Never hardcode colors
+<div className="bg-white text-black">
+  <h3 className="text-amber-500">Title</h3>
+</div>
+```
+
+To change the color scheme globally, only modify the CSS variables in `:root` in `app/globals.css`.
+
 ### Font Optimization
 
 The project uses Next.js font optimization with Google Fonts:

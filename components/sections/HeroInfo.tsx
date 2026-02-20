@@ -64,40 +64,40 @@ export function HeroInfo() {
         <div className="flex flex-col lg:flex-row gap-12 lg:items-end">
           <div className="flex flex-row gap-8 lg:gap-12 justify-center lg:justify-start flex-1">
             <div className="text-center lg:text-left flex-1">
-              <h3 className="!text-3xl lg:!text-4xl text-black mb-2">
+              <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
                 <StatCounter end={27} suffix="+" />
               </h3>
-              <p className="text-base lg:text-lg text-gray-600">Barbiers Expérimentés</p>
+              <p className="text-base lg:text-lg text-gray-500">Barbiers Expérimentés</p>
             </div>
 
             <div className="text-center lg:text-left flex-1">
-              <h3 className="!text-3xl lg:!text-4xl text-black mb-2">
+              <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
                 <StatCounter end={22} suffix="+" />
               </h3>
-              <p className="text-base lg:text-lg text-gray-600">Emplacements</p>
+              <p className="text-base lg:text-lg text-gray-500">Emplacements</p>
             </div>
 
             <div className="text-center lg:text-left flex-1">
-              <h3 className="!text-3xl lg:!text-4xl text-black mb-2">
+              <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
                 <StatCounter end={999} suffix="+" />
               </h3>
-              <p className="text-base lg:text-lg text-gray-600">Clients Satisfaits</p>
+              <p className="text-base lg:text-lg text-gray-500">Clients Satisfaits</p>
             </div>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8 flex-1">
-            <div className="bg-white p-8 shadow-lg flex flex-col items-start text-left flex-1">
-              <Icon icon={Clock} size={48} color="#d97706" className="mb-6" />
-              <h3 className="text-2xl font-bold mb-4 text-black">Horaires</h3>
-              <p className="text-gray-600 mb-2">Ouvert tous les jours</p>
-              <p className="text-gray-600">08:00 - 21:00</p>
+            <div className="bg-bg-primary p-8 shadow-lg flex flex-col items-start text-left flex-1">
+              <Icon icon={Clock} size={48} color="var(--color-secondary)" className="mb-6" />
+              <h3 className="text-2xl font-bold mb-4 text-text-primary">Horaires</h3>
+              <p className="text-gray-500 mb-2">Ouvert tous les jours</p>
+              <p className="text-gray-500">08:00 - 21:00</p>
             </div>
 
-            <div className="bg-white p-8 shadow-lg flex flex-col items-start text-left flex-1">
-              <Icon icon={MessageSquare} size={48} color="#d97706" className="mb-6" />
-              <h3 className="text-2xl font-bold mb-4 text-black">Discutons Ensemble</h3>
-              <p className="text-gray-600 mb-2">contact@barberhouse.fr</p>
-              <p className="text-gray-600">+33 1 23 45 67 89</p>
+            <div className="bg-bg-primary p-8 shadow-lg flex flex-col items-start text-left flex-1">
+              <Icon icon={MessageSquare} size={48} color="var(--color-secondary)" className="mb-6" />
+              <h3 className="text-2xl font-bold mb-4 text-text-primary">Discutons Ensemble</h3>
+              <p className="text-gray-500 mb-2">contact@barberhouse.fr</p>
+              <p className="text-gray-500">+33 1 23 45 67 89</p>
             </div>
           </div>
         </div>
