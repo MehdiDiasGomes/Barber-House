@@ -1,65 +1,93 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+      {/* Navigation */}
+      <nav className="bg-zinc-950 dark:bg-black py-4 px-6">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-amber-500">Barber House</h1>
+          <ul className="hidden md:flex gap-8">
+            <li><a href="#services" className="hover:text-amber-500 transition">Services</a></li>
+            <li><a href="#about" className="hover:text-amber-500 transition">À propos</a></li>
+            <li><a href="#contact" className="hover:text-amber-500 transition">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="py-20 px-6 bg-gradient-to-b from-zinc-900 to-black text-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-5xl md:text-7xl font-bold mb-6">Barber House</h2>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8">
+            Votre destination pour un rasage et une coupe de cheveux premium
+          </p>
+          <button className="bg-amber-500 hover:bg-amber-600 text-black font-bold py-3 px-8 rounded transition">
+            Prendre rendez-vous
+          </button>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-20 px-6 bg-white dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-center mb-16 dark:text-white">Nos Services</h3>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Service 1 */}
+            <div className="p-8 bg-gray-50 dark:bg-zinc-900 rounded-lg hover:shadow-lg transition">
+              <h4 className="text-2xl font-bold mb-4 dark:text-white">Coupe de Cheveux</h4>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Coupes modernes et classiques adaptées à votre style personnel.
+              </p>
+              <p className="font-bold text-amber-500">À partir de 25€</p>
+            </div>
+
+            {/* Service 2 */}
+            <div className="p-8 bg-gray-50 dark:bg-zinc-900 rounded-lg hover:shadow-lg transition">
+              <h4 className="text-2xl font-bold mb-4 dark:text-white">Rasage Premium</h4>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Rasage à l'ancienne avec soin et attention particulière à votre peau.
+              </p>
+              <p className="font-bold text-amber-500">À partir de 20€</p>
+            </div>
+
+            {/* Service 3 */}
+            <div className="p-8 bg-gray-50 dark:bg-zinc-900 rounded-lg hover:shadow-lg transition">
+              <h4 className="text-2xl font-bold mb-4 dark:text-white">Soins de la Barbe</h4>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Modelage, taille et soins complets pour votre barbe.
+              </p>
+              <p className="font-bold text-amber-500">À partir de 15€</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-6 bg-gray-50 dark:bg-black">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-4xl font-bold text-center mb-12 dark:text-white">À Propos</h3>
+          <p className="text-lg text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
+            Chez Barber House, nous croyons que la coupe de cheveux et le rasage sont bien plus qu'un service.
+            C'est un moment de détente et de soin personnel. Nos barbiers expérimentés vous offrent une expérience
+            unique avec des techniques traditionnelles et modernes.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-white dark:bg-gray-950">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-4xl font-bold mb-8 dark:text-white">Nous Contacter</h3>
+          <p className="text-lg mb-4 dark:text-gray-300">📍 123 Rue de la Coupe, Paris 75001</p>
+          <p className="text-lg mb-4 dark:text-gray-300">📞 01 23 45 67 89</p>
+          <p className="text-lg dark:text-gray-300">📧 contact@barberhouse.fr</p>
         </div>
-      </main>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-zinc-950 dark:bg-black text-gray-300 py-8 text-center">
+        <p>&copy; 2024 Barber House. Tous droits réservés.</p>
+      </footer>
     </div>
   );
 }
