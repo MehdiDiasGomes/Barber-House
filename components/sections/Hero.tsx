@@ -14,19 +14,19 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
-        <p className="text-sm md:text-base uppercase tracking-widest text-gray-300 mb-6">
+        <p className="text-sm uppercase tracking-widest text-gray-300 mb-6">
           Bienvenue à Barber House
         </p>
 
-        <h1 className="text-4xl md:text-7xl font-bold mb-4 leading-tight">
+        <h1 className="mb-4 leading-tight">
           Meilleure <span className="bg-amber-500 text-black px-3 py-1 inline-block">Coupe</span>
         </h1>
 
-        <h2 className="text-3xl md:text-5xl font-bold mb-8 text-gray-200">
+        <h2 className="mb-8 text-gray-200">
           Pour une Allure Professionnelle
         </h2>
 
-        <p className="text-base md:text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base lg:text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
           Découvrez nos services de barberie haut de gamme. Expérience des techniques traditionnelles combinées avec les styles modernes,
           livrés par des professionnels expérimentés dédiés à votre satisfaction.
         </p>

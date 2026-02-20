@@ -29,6 +29,47 @@ body {
   font-family: var(--font-montserrat), sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
   font-family: var(--font-cinzel), serif;
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+h2 {
+  @apply text-4xl font-bold;
+  font-family: var(--font-cinzel), serif;
+}
+
+h3 {
+  @apply text-3xl font-bold;
+  font-family: var(--font-cinzel), serif;
+}
+
+h4 {
+  @apply text-2xl font-bold;
+  font-family: var(--font-cinzel), serif;
+}
+
+h5 {
+  @apply text-xl font-bold;
+  font-family: var(--font-cinzel), serif;
+}
+
+h6 {
+  @apply text-lg font-bold;
+  font-family: var(--font-cinzel), serif;
+}
+
+p {
+  @apply text-base;
+}
+
+small {
+  @apply text-sm;
 }

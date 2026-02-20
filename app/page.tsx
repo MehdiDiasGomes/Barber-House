@@ -1,5 +1,6 @@
 import { Hero } from '@/components/sections/Hero';
 import { HeroInfo } from '@/components/sections/HeroInfo';
+import { AboutSection } from '@/components/sections/AboutSection';
 import { Container } from '@/components/ui/Container';
 
 export default function Home() {
@@ -7,14 +8,15 @@ export default function Home() {
     <div className="min-h-screen bg-white text-gray-900">
       <Hero />
       <HeroInfo />
+      <AboutSection />
 
       <section id="services" className="py-20 bg-white">
         <Container>
-          <h3 className="text-4xl font-bold text-center mb-16">Nos Services</h3>
+          <h3 className="text-center mb-16">Nos Services</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 bg-gray-50 hover:shadow-lg transition">
-              <h4 className="text-2xl font-bold mb-4">Coupe de Cheveux</h4>
+              <h4 className="mb-4">Coupe de Cheveux</h4>
               <p className="text-gray-600 mb-4">
                 Coupes modernes et classiques adaptées à votre style personnel.
               </p>
@@ -22,7 +24,7 @@ export default function Home() {
             </div>
 
             <div className="p-8 bg-gray-50 hover:shadow-lg transition">
-              <h4 className="text-2xl font-bold mb-4">Rasage Premium</h4>
+              <h4 className="mb-4">Rasage Premium</h4>
               <p className="text-gray-600 mb-4">
                 Rasage à l&apos;ancienne avec soin et attention particulière à votre peau.
               </p>
@@ -30,7 +32,7 @@ export default function Home() {
             </div>
 
             <div className="p-8 bg-gray-50 hover:shadow-lg transition">
-              <h4 className="text-2xl font-bold mb-4">Soins de la Barbe</h4>
+              <h4 className="mb-4">Soins de la Barbe</h4>
               <p className="text-gray-600 mb-4">
                 Modelage, taille et soins complets pour votre barbe.
               </p>
@@ -42,7 +44,7 @@ export default function Home() {
 
       <section id="about" className="py-20 bg-gray-50">
         <Container>
-          <h3 className="text-4xl font-bold text-center mb-12">À Propos</h3>
+          <h3 className="text-center mb-12">À Propos</h3>
           <p className="text-lg text-gray-700 text-center max-w-3xl mx-auto leading-relaxed">
             Chez Barber House, nous croyons que la coupe de cheveux et le rasage sont bien plus qu&apos;un service.
             C&apos;est un moment de détente et de soin personnel. Nos barbiers expérimentés vous offrent une expérience
@@ -53,7 +55,7 @@ export default function Home() {
 
       <section id="contact" className="py-20 bg-white">
         <Container className="text-center">
-          <h3 className="text-4xl font-bold mb-8">Nous Contacter</h3>
+          <h3 className="mb-8">Nous Contacter</h3>
           <p className="text-lg mb-4">📍 123 Rue de la Coupe, Paris 75001</p>
           <p className="text-lg mb-4">📞 01 23 45 67 89</p>
           <p className="text-lg">📧 contact@barberhouse.fr</p>

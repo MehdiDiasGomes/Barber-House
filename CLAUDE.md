@@ -94,6 +94,33 @@ The project uses Next.js font optimization with Google Fonts:
 
 Fonts are configured in `app/layout.tsx` with CSS variables (`--font-cinzel`, `--font-montserrat`) available globally. All headings automatically use Cinzel font family.
 
+### Global Typography (DRY Principle)
+
+All heading sizes are defined globally in `app/globals.css` using Tailwind's `@apply` directive. **Never hardcode typography classes in components** - let CSS handle it:
+
+```css
+h1 { @apply text-5xl lg:text-7xl font-bold; }
+h2 { @apply text-4xl lg:text-5xl font-bold; }
+h3 { @apply text-4xl lg:text-5xl font-bold; }
+h4 { @apply text-xl lg:text-2xl font-bold; }
+```
+
+Use semantic HTML tags and let global styles apply automatically:
+```typescript
+// ✅ CORRECT - Let CSS handle sizing
+<h1>Page Title</h1>
+<h3 className="text-center">Section Title</h3>
+
+// ❌ WRONG - Never hardcode typography sizes
+<h3 className="text-4xl lg:text-5xl font-bold">Section Title</h3>
+```
+
+For exceptions (e.g., smaller stat numbers), use `!` modifier to override:
+```typescript
+// ✅ Override when needed
+<h3 className="!text-3xl lg:!text-4xl">999+</h3>
+```
+
 ## Git Commit Conventions
 
 ### Commit Message Format
