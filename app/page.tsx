@@ -1,19 +1,6 @@
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100">
-      {/* Navigation */}
-      <nav className="bg-zinc-950 dark:bg-black py-4 px-6">
-        <div className="max-w-6xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-amber-500">Barber House</h1>
-          <ul className="hidden md:flex gap-8">
-            <li><a href="#services" className="hover:text-amber-500 transition">Services</a></li>
-            <li><a href="#about" className="hover:text-amber-500 transition">À propos</a></li>
-            <li><a href="#contact" className="hover:text-amber-500 transition">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
       <section className="py-20 px-6 bg-gradient-to-b from-zinc-900 to-black text-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-5xl md:text-7xl font-bold mb-6">Barber House</h2>
@@ -26,13 +13,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Section */}
       <section id="services" className="py-20 px-6 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-4xl font-bold text-center mb-16 dark:text-white">Nos Services</h3>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* Service 1 */}
             <div className="p-8 bg-gray-50 dark:bg-zinc-900 rounded-lg hover:shadow-lg transition">
               <h4 className="text-2xl font-bold mb-4 dark:text-white">Coupe de Cheveux</h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -41,16 +26,14 @@ export default function Home() {
               <p className="font-bold text-amber-500">À partir de 25€</p>
             </div>
 
-            {/* Service 2 */}
             <div className="p-8 bg-gray-50 dark:bg-zinc-900 rounded-lg hover:shadow-lg transition">
               <h4 className="text-2xl font-bold mb-4 dark:text-white">Rasage Premium</h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Rasage à l'ancienne avec soin et attention particulière à votre peau.
+                Rasage à l&apos;ancienne avec soin et attention particulière à votre peau.
               </p>
               <p className="font-bold text-amber-500">À partir de 20€</p>
             </div>
 
-            {/* Service 3 */}
             <div className="p-8 bg-gray-50 dark:bg-zinc-900 rounded-lg hover:shadow-lg transition">
               <h4 className="text-2xl font-bold mb-4 dark:text-white">Soins de la Barbe</h4>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
@@ -62,19 +45,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About Section */}
       <section id="about" className="py-20 px-6 bg-gray-50 dark:bg-black">
         <div className="max-w-6xl mx-auto">
           <h3 className="text-4xl font-bold text-center mb-12 dark:text-white">À Propos</h3>
           <p className="text-lg text-gray-700 dark:text-gray-300 text-center max-w-3xl mx-auto leading-relaxed">
-            Chez Barber House, nous croyons que la coupe de cheveux et le rasage sont bien plus qu'un service.
-            C'est un moment de détente et de soin personnel. Nos barbiers expérimentés vous offrent une expérience
+            Chez Barber House, nous croyons que la coupe de cheveux et le rasage sont bien plus qu&apos;un service.
+            C&apos;est un moment de détente et de soin personnel. Nos barbiers expérimentés vous offrent une expérience
             unique avec des techniques traditionnelles et modernes.
           </p>
         </div>
       </section>
 
-      {/* Contact Section */}
       <section id="contact" className="py-20 px-6 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto text-center">
           <h3 className="text-4xl font-bold mb-8 dark:text-white">Nous Contacter</h3>
@@ -84,7 +65,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-zinc-950 dark:bg-black text-gray-300 py-8 text-center">
         <p>&copy; 2024 Barber House. Tous droits réservés.</p>
       </footer>

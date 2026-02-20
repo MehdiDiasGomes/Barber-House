@@ -162,6 +162,48 @@ git commit -m "♻️ refactor: extract navigation data to constants"
    - Utility files: camelCase (e.g., `formatPrice.ts`)
    - Type files: camelCase (e.g., `service.ts`)
 
+4. **Comments & Documentation**
+   - **NO inline comments** anywhere in the code
+   - Use **TSDoc** comments ONLY for:
+     - Complex functions or functions with multiple steps
+     - Components (describe what the component does)
+   - Do NOT comment simple variables, interfaces, or straightforward functions
+   - TSDoc must be concise and clear in English
+   - TSDoc format: `/** Description */` for single-line, `/** ... */` for multi-line
+
+### TSDoc Examples
+
+```typescript
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  price: string;
+}
+
+const toggleMenu = (): void => {
+  setIsOpen(!isOpen);
+};
+
+/**
+ * Formats a price value to currency format.
+ * @param price - The price as a number
+ * @returns Formatted price string (e.g., "$25.00")
+ */
+function formatPrice(price: number): string {
+  return `$${(price / 100).toFixed(2)}`;
+}
+
+/**
+ * Renders the main navigation bar with responsive desktop and mobile layouts.
+ * Includes logo, navigation links, and CTA button with mobile hamburger menu.
+ */
+export function Navbar(): JSX.Element {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  // ...
+}
+```
+
 4. **Props Interface Pattern**
    ```typescript
    interface ButtonProps {
