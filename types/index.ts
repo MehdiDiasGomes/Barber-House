@@ -6,3 +6,6 @@ export type { IconProps } from './icon';
 
 // Button types
 export type { ButtonVariant, ButtonProps } from './button';
+
+// Service types
+export type { Service } from './service';

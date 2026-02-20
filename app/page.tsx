@@ -1,6 +1,7 @@
 import { Hero } from '@/components/sections/Hero';
 import { HeroInfo } from '@/components/sections/HeroInfo';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { ServicesSection } from '@/components/sections/ServicesSection';
 import { Container } from '@/components/ui/Container';
 
 export default function Home() {
@@ -9,38 +10,7 @@ export default function Home() {
       <Hero />
       <HeroInfo />
       <AboutSection />
-
-      <section id="services" className="py-20 bg-bg-primary">
-        <Container>
-          <h3 className="text-center mb-16">Nos Services</h3>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 bg-bg-secondary hover:shadow-lg transition">
-              <h4 className="mb-4">Coupe de Cheveux</h4>
-              <p className="text-gray-500 mb-4">
-                Coupes modernes et classiques adaptées à votre style personnel.
-              </p>
-              <p className="font-bold text-secondary">À partir de 25€</p>
-            </div>
-
-            <div className="p-8 bg-bg-secondary hover:shadow-lg transition">
-              <h4 className="mb-4">Rasage Premium</h4>
-              <p className="text-gray-500 mb-4">
-                Rasage à l&apos;ancienne avec soin et attention particulière à votre peau.
-              </p>
-              <p className="font-bold text-secondary">À partir de 20€</p>
-            </div>
-
-            <div className="p-8 bg-bg-secondary hover:shadow-lg transition">
-              <h4 className="mb-4">Soins de la Barbe</h4>
-              <p className="text-gray-500 mb-4">
-                Modelage, taille et soins complets pour votre barbe.
-              </p>
-              <p className="font-bold text-secondary">À partir de 15€</p>
-            </div>
-          </div>
-        </Container>
-      </section>
+      <ServicesSection />
 
       <section id="about" className="py-20 bg-bg-secondary">
         <Container>

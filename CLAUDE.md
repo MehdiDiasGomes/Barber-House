@@ -330,7 +330,7 @@ Location: `/components/ui/Button.tsx`
 - `'default'` - White button with gray hover (primary CTA)
 - `'outline'` - White border with transparent background, white on hover
 - `'secondary'` - Gray button with darker gray hover
-- `'navbar'` - Small navbar button with amber hover
+- `'navbar'` - Small navbar button with orange hover
 
 **Usage:**
 ```typescript
@@ -360,6 +360,37 @@ import { Button } from '@/components/ui/Button';
 - `className?: string` - Additional Tailwind classes
 - `onClick?: () => void` - Click handler
 - `type?: 'button' | 'submit' | 'reset'` - HTML button type
+
+#### ServiceCard Component
+
+Location: `/components/ui/ServiceCard.tsx`
+
+Displays a barber service with icon, title, description, and price.
+
+**Usage:**
+```typescript
+import { ServiceCard } from '@/components/ui/ServiceCard';
+import type { Service } from '@/types';
+
+const service: Service = {
+  id: 'adult-haircut',
+  title: 'Adult Haircut',
+  description: 'Professional adult haircut service...',
+  price: 39,
+  icon: Scissors,
+};
+
+<ServiceCard service={service} />
+```
+
+**Props:**
+- `service: Service` - Service object with id, title, description, price, and icon
+
+#### ServicesSection Component
+
+Location: `/components/sections/ServicesSection.tsx`
+
+Full services section with title, description, and grid of 6 service cards. Data is stored in `/constants/services.ts`.
 
 ### Example Type Declaration
 
