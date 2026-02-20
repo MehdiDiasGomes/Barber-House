@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
 
 export function Hero() {
   return (
@@ -32,12 +33,8 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
-          <button className="bg-white hover:bg-gray-200 text-black font-bold py-3 px-10 uppercase tracking-widest transition">
-            Prendre Rendez-vous
-          </button>
-          <button className="border-2 border-white hover:bg-white hover:text-black text-white font-bold py-3 px-10 uppercase tracking-widest transition">
-            Tous les Services
-          </button>
+          <Button>Prendre Rendez-vous</Button>
+          <Button variant="outline">Tous les Services</Button>
         </div>
       </div>
     </section>

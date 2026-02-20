@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
+import { Button } from '@/components/ui/Button';
 
 export function AboutSection() {
   return (
@@ -48,9 +49,7 @@ export function AboutSection() {
               Laissez nos barbiers expérimentés réaliser votre coupe de cheveux idéale. Obtenez votre style préféré. Laissez nos barbiers réaliser leur incroyable travail. Coupez les cheveux. Prenez rendez-vous avec nous pour votre style de cheveux préféré!
             </p>
 
-            <button className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-8 uppercase tracking-wider transition">
-              Lire Plus
-            </button>
+            <Button variant="secondary">Lire Plus</Button>
           </div>
         </div>
       </Container>

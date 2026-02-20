@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { navbarConfig } from '@/constants/navigation';
 import { Container } from '@/components/ui/Container';
+import { Button } from '@/components/ui/Button';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -38,12 +39,7 @@ export function Navbar() {
               ))}
             </div>
 
-            <Link
-              href={navbarConfig.ctaButton.href}
-              className="bg-white text-zinc-950 px-6 py-2 font-bold text-sm uppercase tracking-wider hover:bg-amber-500 hover:text-white transition-all duration-300"
-            >
-              {navbarConfig.ctaButton.label}
-            </Link>
+            <Button variant="navbar">{navbarConfig.ctaButton.label}</Button>
           </div>
 
           <div className="md:hidden">
@@ -83,13 +79,9 @@ export function Navbar() {
                 </Link>
               ))}
 
-              <Link
-                href={navbarConfig.ctaButton.href}
-                className="bg-white text-zinc-950 px-6 py-2 font-bold text-sm uppercase tracking-wider hover:bg-amber-500 hover:text-white transition-all duration-300 text-center mt-2"
-                onClick={() => setIsOpen(false)}
-              >
+              <Button variant="navbar" className="w-full text-center mt-2" onClick={() => setIsOpen(false)}>
                 {navbarConfig.ctaButton.label}
-              </Link>
+              </Button>
             </div>
           </div>
         )}

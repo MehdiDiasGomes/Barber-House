@@ -282,6 +282,47 @@ export function Navbar(): JSX.Element {
    - Group imports: React, Next.js, internal imports, types
    - Use type imports for types: `import type { Service }`
 
+### UI Components
+
+#### Button Component
+
+Location: `/components/ui/Button.tsx`
+
+**Variants:**
+- `'default'` - White button with gray hover (primary CTA)
+- `'outline'` - White border with transparent background, white on hover
+- `'secondary'` - Gray button with darker gray hover
+- `'navbar'` - Small navbar button with amber hover
+
+**Usage:**
+```typescript
+import { Button } from '@/components/ui/Button';
+
+// Default variant
+<Button>Prendre Rendez-vous</Button>
+
+// With variant
+<Button variant="outline">Tous les Services</Button>
+<Button variant="secondary">Lire Plus</Button>
+<Button variant="navbar">Réserver</Button>
+
+// With custom onClick
+<Button onClick={() => console.log('clicked')}>Click me</Button>
+
+// With additional classes
+<Button className="w-full">Full width button</Button>
+
+// As submit button
+<Button type="submit">Envoyer</Button>
+```
+
+**Props:**
+- `children: ReactNode` - Button content
+- `variant?: ButtonVariant` - Style variant (default: 'default')
+- `className?: string` - Additional Tailwind classes
+- `onClick?: () => void` - Click handler
+- `type?: 'button' | 'submit' | 'reset'` - HTML button type
+
 ### Example Type Declaration
 
 File: `/types/service.ts`
