@@ -120,3 +120,11 @@ p {
 small {
   @apply text-sm;
 }
+
+/* Barbershop pattern background */
+.pattern-barbershop {
+  background-color: #ffffff;
+  background-image: url('/images/barbershop-pattern.svg');
+  background-repeat: repeat;
+  background-size: 300px 300px;
+}

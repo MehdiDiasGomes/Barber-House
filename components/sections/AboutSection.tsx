@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/Button';
 
 export function AboutSection() {
   return (
-    <section className="py-20 bg-bg-primary">
+    <section className="py-20 pattern-barbershop">
       <Container>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 auto-rows-[200px] lg:auto-rows-[240px]">
