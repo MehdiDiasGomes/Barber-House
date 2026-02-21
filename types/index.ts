@@ -9,3 +9,6 @@ export type { ButtonVariant, ButtonProps } from './button';
 
 // Service types
 export type { Service } from './service';
+
+// Team types
+export type { TeamMember } from './team';
