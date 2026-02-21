@@ -18,7 +18,7 @@ export default function Home() {
       <TeamSection />
       <ContactSection />
 
-      <footer className="bg-bg-dark text-text-light py-8">
+      <footer className="bg-primary text-text-light py-8">
         <Container className="text-center">
           <p>
             &copy; {new Date().getFullYear()} Développé par{" "}
