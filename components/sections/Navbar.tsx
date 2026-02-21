@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { navbarConfig } from '@/constants/navigation';
 import { Container } from '@/components/ui/Container';
+import { Button } from '@/components/ui/Button';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -13,13 +14,13 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-zinc-950 text-white sticky top-0 z-50">
+    <nav className="bg-primary text-text-light sticky top-0 z-50">
       <Container className="py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <Link
               href="/"
-              className="text-xl font-bold font-cinzel tracking-widest text-amber-500"
+              className="text-xl font-bold font-cinzel tracking-widest text-secondary"
             >
               {navbarConfig.logo}
             </Link>
@@ -31,25 +32,20 @@ export function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-montserrat hover:text-amber-500 transition-colors duration-300 uppercase tracking-wider"
+                  className="text-sm font-montserrat hover:text-secondary transition-colors duration-300 uppercase tracking-wider"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            <Link
-              href={navbarConfig.ctaButton.href}
-              className="bg-white text-zinc-950 px-6 py-2 font-bold text-sm uppercase tracking-wider hover:bg-amber-500 hover:text-white transition-all duration-300"
-            >
-              {navbarConfig.ctaButton.label}
-            </Link>
+            <Button variant="navbar">{navbarConfig.ctaButton.label}</Button>
           </div>
 
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className="hover:text-amber-500 transition-colors"
+              className="hover:text-secondary transition-colors"
               aria-label="Toggle menu"
             >
               <svg
@@ -70,26 +66,22 @@ export function Navbar() {
         </div>
 
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-700">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-600">
             <div className="flex flex-col gap-4 py-4">
               {navbarConfig.links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-montserrat hover:text-amber-500 transition-colors uppercase tracking-wider"
+                  className="text-sm font-montserrat hover:text-secondary transition-colors uppercase tracking-wider"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <Link
-                href={navbarConfig.ctaButton.href}
-                className="bg-white text-zinc-950 px-6 py-2 font-bold text-sm uppercase tracking-wider hover:bg-amber-500 hover:text-white transition-all duration-300 text-center mt-2"
-                onClick={() => setIsOpen(false)}
-              >
+              <Button variant="navbar" className="w-full text-center mt-2" onClick={() => setIsOpen(false)}>
                 {navbarConfig.ctaButton.label}
-              </Link>
+              </Button>
             </div>
           </div>
         )}

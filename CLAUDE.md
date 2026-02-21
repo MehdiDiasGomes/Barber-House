@@ -86,6 +86,44 @@ The project uses **Tailwind CSS v4** with the new PostCSS plugin. Global styles 
 
 All components must have sharp corners (0 radius).
 
+### Color Palette (Centralized)
+
+All colors are defined as CSS variables in `:root` and mapped to Tailwind colors via `@theme`. **NEVER hardcode color names in components** - always use the semantic color names:
+
+**Brand Colors:**
+- `primary` - #1a1a1a (dark primary color for navbar, text)
+- `secondary` - #d4af37 (gold/amber accent color)
+
+**Semantic Text Colors:**
+- `text-primary` - #000000 (main text)
+- `text-secondary` - #6b7280 (secondary text, muted)
+- `text-light` - #ffffff (light text for dark backgrounds)
+- `text-muted` - #9ca3af (disabled/faint text)
+
+**Semantic Background Colors:**
+- `bg-primary` - #ffffff (main background)
+- `bg-secondary` - #f9fafb (secondary background, light gray)
+- `bg-dark` - #111827 (dark background for footer)
+
+**Gray Scale:**
+- `gray-200` through `gray-700` - Various neutral grays
+
+**Usage Example:**
+```typescript
+// ✅ CORRECT - Use semantic color names
+<div className="bg-bg-primary text-text-primary">
+  <h3 className="text-secondary">Title</h3>
+  <p className="text-gray-500">Subtitle</p>
+</div>
+
+// ❌ WRONG - Never hardcode colors
+<div className="bg-white text-black">
+  <h3 className="text-amber-500">Title</h3>
+</div>
+```
+
+To change the color scheme globally, only modify the CSS variables in `:root` in `app/globals.css`.
+
 ### Font Optimization
 
 The project uses Next.js font optimization with Google Fonts:
@@ -93,6 +131,33 @@ The project uses Next.js font optimization with Google Fonts:
 - **Montserrat** - For body text and general content
 
 Fonts are configured in `app/layout.tsx` with CSS variables (`--font-cinzel`, `--font-montserrat`) available globally. All headings automatically use Cinzel font family.
+
+### Global Typography (DRY Principle)
+
+All heading sizes are defined globally in `app/globals.css` using Tailwind's `@apply` directive. **Never hardcode typography classes in components** - let CSS handle it:
+
+```css
+h1 { @apply text-5xl lg:text-7xl font-bold; }
+h2 { @apply text-4xl lg:text-5xl font-bold; }
+h3 { @apply text-4xl lg:text-5xl font-bold; }
+h4 { @apply text-xl lg:text-2xl font-bold; }
+```
+
+Use semantic HTML tags and let global styles apply automatically:
+```typescript
+// ✅ CORRECT - Let CSS handle sizing
+<h1>Page Title</h1>
+<h3 className="text-center">Section Title</h3>
+
+// ❌ WRONG - Never hardcode typography sizes
+<h3 className="text-4xl lg:text-5xl font-bold">Section Title</h3>
+```
+
+For exceptions (e.g., smaller stat numbers), use `!` modifier to override:
+```typescript
+// ✅ Override when needed
+<h3 className="!text-3xl lg:!text-4xl">999+</h3>
+```
 
 ## Git Commit Conventions
 
@@ -254,6 +319,78 @@ export function Navbar(): JSX.Element {
    - Use `@/` path alias for all imports
    - Group imports: React, Next.js, internal imports, types
    - Use type imports for types: `import type { Service }`
+
+### UI Components
+
+#### Button Component
+
+Location: `/components/ui/Button.tsx`
+
+**Variants:**
+- `'default'` - White button with gray hover (primary CTA)
+- `'outline'` - White border with transparent background, white on hover
+- `'secondary'` - Gray button with darker gray hover
+- `'navbar'` - Small navbar button with orange hover
+
+**Usage:**
+```typescript
+import { Button } from '@/components/ui/Button';
+
+// Default variant
+<Button>Prendre Rendez-vous</Button>
+
+// With variant
+<Button variant="outline">Tous les Services</Button>
+<Button variant="secondary">Lire Plus</Button>
+<Button variant="navbar">Réserver</Button>
+
+// With custom onClick
+<Button onClick={() => console.log('clicked')}>Click me</Button>
+
+// With additional classes
+<Button className="w-full">Full width button</Button>
+
+// As submit button
+<Button type="submit">Envoyer</Button>
+```
+
+**Props:**
+- `children: ReactNode` - Button content
+- `variant?: ButtonVariant` - Style variant (default: 'default')
+- `className?: string` - Additional Tailwind classes
+- `onClick?: () => void` - Click handler
+- `type?: 'button' | 'submit' | 'reset'` - HTML button type
+
+#### ServiceCard Component
+
+Location: `/components/ui/ServiceCard.tsx`
+
+Displays a barber service with icon, title, description, and price.
+
+**Usage:**
+```typescript
+import { ServiceCard } from '@/components/ui/ServiceCard';
+import type { Service } from '@/types';
+
+const service: Service = {
+  id: 'adult-haircut',
+  title: 'Adult Haircut',
+  description: 'Professional adult haircut service...',
+  price: 39,
+  icon: Scissors,
+};
+
+<ServiceCard service={service} />
+```
+
+**Props:**
+- `service: Service` - Service object with id, title, description, price, and icon
+
+#### ServicesSection Component
+
+Location: `/components/sections/ServicesSection.tsx`
+
+Full services section with title, description, and grid of 6 service cards. Data is stored in `/constants/services.ts`.
 
 ### Example Type Declaration
 
