@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cinzel, Montserrat } from "next/font/google";
 import { Navbar } from "@/components/sections/Navbar";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
 const cinzel = Cinzel({
@@ -32,6 +33,7 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+        <Toaster />
       </body>
     </html>
   );
