@@ -1,12 +1,23 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import { servicesData } from "@/constants/services";
 import { Container } from "@/components/ui/Container";
 import { ServiceCard } from "@/components/ui/ServiceCard";
+import { fadeInUpVariants, staggerContainerVariants, staggerItemVariants } from "@/hooks/useScrollAnimation";
 
 export function ServicesSection() {
   return (
     <section id="services" className="py-20 bg-bg-primary">
       <Container>
-        <div className="text-center mb-16">
+        <motion.div
+          className="text-center mb-16"
+          variants={fadeInUpVariants}
+          initial="initial"
+          whileInView="whileInView"
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <p className="text-sm uppercase tracking-widest text-text-secondary mb-4">
             Services
           </p>
@@ -18,13 +29,21 @@ export function ServicesSection() {
             conçus pour améliorer votre expérience de toilettage et vous laisser
             frais et renouvelé.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={staggerContainerVariants}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {servicesData.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <motion.div key={service.id} variants={staggerItemVariants}>
+              <ServiceCard service={service} />
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -9,7 +10,13 @@ export function AboutSection() {
     <section className="py-20 pattern-barbershop">
       <Container>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
-          <div className="w-full lg:w-1/2 grid grid-cols-2 gap-4 auto-rows-[200px] lg:auto-rows-[240px]">
+          <motion.div
+            className="w-full lg:w-1/2 grid grid-cols-2 gap-4 auto-rows-[200px] lg:auto-rows-[240px]"
+            initial={{ opacity: 0, y: -30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="col-span-1 row-span-2 relative overflow-hidden bg-bg-secondary">
               <Image
                 src="/images/about/barber-main.jpg"
@@ -36,9 +43,15 @@ export function AboutSection() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex-1">
+          <motion.div
+            className="flex-1"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <p className="text-sm uppercase tracking-widest text-gray-500 mb-4">À Propos</p>
 
             <h2 className="text-text-primary mb-6">
@@ -50,7 +63,7 @@ export function AboutSection() {
             </p>
 
             <Button variant="secondary">Lire Plus</Button>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

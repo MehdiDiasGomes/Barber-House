@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import { Clock, MessageSquare } from 'lucide-react';
 import { Icon } from '@/components/ui/Icon';
 import { Container } from '@/components/ui/Container';
+import { fadeInUpVariants } from '@/hooks/useScrollAnimation';
 
 function StatCounter({ end, suffix }: { end: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -62,7 +64,14 @@ export function HeroInfo() {
     <section className="relative mt-16 lg:-mt-16 pb-20">
       <Container>
         <div className="flex flex-col lg:flex-row gap-12 lg:items-end">
-          <div className="flex flex-row gap-8 lg:gap-12 justify-center lg:justify-start flex-1">
+          <motion.div
+            className="flex flex-row gap-8 lg:gap-12 justify-center lg:justify-start flex-1"
+            variants={fadeInUpVariants}
+            initial="initial"
+            whileInView="whileInView"
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="text-center lg:text-left flex-1">
               <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
                 <StatCounter end={27} suffix="+" />
@@ -83,9 +92,16 @@ export function HeroInfo() {
               </h3>
               <p className="text-base lg:text-lg text-gray-500">Clients Satisfaits</p>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="flex flex-col lg:flex-row gap-8 flex-1">
+          <motion.div
+            className="flex flex-col lg:flex-row gap-8 flex-1"
+            variants={fadeInUpVariants}
+            initial="initial"
+            whileInView="whileInView"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
             <div className="bg-bg-primary p-8 shadow-lg flex flex-col items-start text-left flex-1">
               <Icon icon={Clock} size={48} color="var(--color-secondary)" className="mb-6" />
               <h3 className="text-2xl font-bold mb-4 text-text-primary">Horaires</h3>
@@ -99,7 +115,7 @@ export function HeroInfo() {
               <p className="text-gray-500 mb-2">contact@barberhouse.fr</p>
               <p className="text-gray-500">+33 1 23 45 67 89</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>
