@@ -74,14 +74,14 @@ export function HeroInfo() {
           >
             <div className="text-center lg:text-left flex-1">
               <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
-                <StatCounter end={27} suffix="+" />
+                <StatCounter end={6} suffix="" />
               </h3>
               <p className="text-base lg:text-lg text-gray-500">Barbiers Expérimentés</p>
             </div>
 
             <div className="text-center lg:text-left flex-1">
               <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
-                <StatCounter end={22} suffix="+" />
+                <StatCounter end={3} suffix="" />
               </h3>
               <p className="text-base lg:text-lg text-gray-500">Emplacements</p>
             </div>

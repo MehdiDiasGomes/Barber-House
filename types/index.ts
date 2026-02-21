@@ -12,3 +12,6 @@ export type { Service } from './service';
 
 // Team types
 export type { TeamMember } from './team';
+
+// Testimonial types
+export type { Testimonial } from './testimonial';
