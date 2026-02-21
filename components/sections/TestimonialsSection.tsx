@@ -21,7 +21,7 @@ export function TestimonialsSection() {
           <p className="text-sm uppercase tracking-widest text-text-secondary mb-4">
             Avis Clients
           </p>
-          <h2 className="mb-6">Ce Que Nos Clients Disent</h2>
+          <h2 className="mb-6">Ils en parlent mieux que nous</h2>
           <p className="text-gray-500 max-w-3xl mx-auto leading-relaxed">
             Découvrez les retours de nos clients satisfaits qui font confiance à notre expertise
             et notre professionnalisme pour leurs besoins en barbering.

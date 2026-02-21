@@ -2,7 +2,7 @@ import { Hero } from "@/components/sections/Hero";
 import { HeroInfo } from "@/components/sections/HeroInfo";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
+import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { TeamSection } from "@/components/sections/TeamSection";
 import { Container } from "@/components/ui/Container";
 
@@ -13,7 +13,7 @@ export default function Home() {
       <HeroInfo />
       <AboutSection />
       <ServicesSection />
-      <TestimonialsSection />
+      <TestimonialsCarousel />
       <TeamSection />
 
       <footer className="bg-bg-dark text-text-light py-8">

@@ -9,7 +9,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   const { name, content, rating } = testimonial;
 
   return (
-    <div className="p-8 bg-transparent border border-gray-200 flex flex-col h-full">
+    <div className="p-8 bg-bg-primary border border-gray-200 flex flex-col h-full">
       <div className="flex gap-1 mb-6">
         {Array.from({ length: rating }).map((_, i) => (
           <Star
