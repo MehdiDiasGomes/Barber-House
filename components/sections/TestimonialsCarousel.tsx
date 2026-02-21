@@ -17,12 +17,6 @@ export function TestimonialsCarousel() {
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setCanScrollPrev(emblaApi.canScrollPrev());
-    setCanScrollNext(emblaApi.canScrollNext());
-  }, [emblaApi]);
-
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -34,13 +28,18 @@ export function TestimonialsCarousel() {
   useEffect(() => {
     if (!emblaApi) return;
 
+    const onSelect = () => {
+      setCanScrollPrev(emblaApi.canScrollPrev());
+      setCanScrollNext(emblaApi.canScrollNext());
+    };
+
     onSelect();
     emblaApi.on('select', onSelect);
 
     return () => {
       emblaApi.off('select', onSelect);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi]);
 
   return (
     <section id="testimonials" className="py-20 bg-bg-primary">
