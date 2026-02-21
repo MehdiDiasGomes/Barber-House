@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* Brand Colors */
   --color-primary: #1a1a1a;
@@ -238,4 +242,15 @@ small {
 
 .react-calendar-custom .react-calendar__tile--neighboringMonth {
   color: #d1d5db;
+}
+
+/* Hide number input spinner arrows */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

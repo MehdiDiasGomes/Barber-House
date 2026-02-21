@@ -13,6 +13,18 @@ export function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const href = e.currentTarget.getAttribute('href');
+    if (href && href.startsWith('#') && href !== '#') {
+      e.preventDefault();
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsOpen(false);
+      }
+    }
+  };
+
   return (
     <nav className="bg-primary text-text-light sticky top-0 z-50">
       <Container className="py-4">
@@ -29,13 +41,14 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-8">
             <div className="flex gap-8">
               {navbarConfig.links.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
+                  onClick={handleNavClick}
                   className="text-sm font-montserrat hover:text-secondary transition-colors duration-300 uppercase tracking-wider"
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -69,14 +82,14 @@ export function Navbar() {
           <div className="md:hidden mt-4 pb-4 border-t border-gray-600">
             <div className="flex flex-col gap-4 py-4">
               {navbarConfig.links.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
+                  onClick={handleNavClick}
                   className="text-sm font-montserrat hover:text-secondary transition-colors uppercase tracking-wider"
-                  onClick={() => setIsOpen(false)}
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
 
               <Button variant="navbar" className="w-full text-center mt-2" onClick={() => setIsOpen(false)}>

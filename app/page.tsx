@@ -4,6 +4,7 @@ import { AboutSection } from "@/components/sections/AboutSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TestimonialsCarousel } from "@/components/sections/TestimonialsCarousel";
 import { TeamSection } from "@/components/sections/TeamSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { Container } from "@/components/ui/Container";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <ServicesSection />
       <TestimonialsCarousel />
       <TeamSection />
+      <ContactSection />
 
       <footer className="bg-bg-dark text-text-light py-8">
         <Container className="text-center">
