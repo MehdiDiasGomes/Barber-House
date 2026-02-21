@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { navbarConfig } from '@/constants/navigation';
 import { Container } from '@/components/ui/Container';
@@ -30,11 +31,14 @@ export function Navbar() {
       <Container className="py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
-            <Link
-              href="/"
-              className="text-xl font-bold font-cinzel tracking-widest text-secondary"
-            >
-              {navbarConfig.logo}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Barber House Logo"
+                width={60}
+                height={60}
+                priority
+              />
             </Link>
           </div>
 
