@@ -16,18 +16,20 @@ export function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const href = e.currentTarget.getAttribute('href');
-    if (href && href.startsWith('#') && href !== '#') {
+    if (href && href.startsWith('#')) {
       e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setIsOpen(false);
+      if (href !== '#') {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
+      setIsOpen(false);
     }
   };
 
   return (
-    <nav className="bg-primary text-text-light sticky top-0 z-50">
+    <nav className="bg-primary text-text-light fixed top-0 w-full z-50">
       <Container className="py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">

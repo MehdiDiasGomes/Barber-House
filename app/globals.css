@@ -2,6 +2,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 100px;
+  }
 }
 
 :root {
@@ -78,6 +85,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat), sans-serif;
+  padding-top: 60px;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px;
+  }
 }
 
 h1 {

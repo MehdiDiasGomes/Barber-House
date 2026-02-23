@@ -1,9 +1,18 @@
+'use client';
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
 
 export function Hero() {
+  const handleScrollToServices = (): void => {
+    const element = document.querySelector('#services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
       <Image
         src="/images/hero/bg.jpg"
         alt="Barber House Hero"
@@ -34,7 +43,7 @@ export function Hero() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Button>Prendre Rendez-vous</Button>
-          <Button variant="outline">Tous les Services</Button>
+          <Button variant="outline" onClick={handleScrollToServices}>Tous les Services</Button>
         </div>
       </div>
     </section>
