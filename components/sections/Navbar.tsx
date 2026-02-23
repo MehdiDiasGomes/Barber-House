@@ -29,7 +29,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-primary text-text-light fixed top-0 w-full z-50">
+    <nav className="bg-primary text-text-light sticky top-0 z-50">
       <Container className="py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
