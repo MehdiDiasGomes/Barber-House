@@ -1,18 +1,17 @@
 "use client"
 
-import * as React from "react"
 import ReactCalendar from "react-calendar"
 import "react-calendar/dist/Calendar.css"
 
 import { cn } from "@/lib/utils"
 
 interface CalendarProps {
-  value?: Date
-  onChange?: (date: Date) => void
+  value?: Date | null | [Date, Date]
+  onChange?: (value: Date | null | [Date, Date]) => void
   className?: string
   minDate?: Date
   maxDate?: Date
-  tileDisabled?: (date: Date) => boolean
+  tileDisabled?: (args: { date: Date; view: string }) => boolean
 }
 
 function Calendar({
@@ -23,13 +22,24 @@ function Calendar({
   maxDate,
   tileDisabled
 }: CalendarProps) {
+  const handleChange = (calendarValue: Date | null | [Date | null, Date | null]): void => {
+    if (onChange) {
+      onChange(calendarValue as Date | null | [Date, Date])
+    }
+  }
+
+  const handleTileDisabled = (args: { date: Date; view: string }): boolean => {
+    if (!tileDisabled) return false
+    return tileDisabled(args)
+  }
+
   return (
     <ReactCalendar
-      onChange={onChange}
+      onChange={handleChange}
       value={value}
       minDate={minDate}
       maxDate={maxDate}
-      tileDisabled={tileDisabled}
+      tileDisabled={handleTileDisabled}
       className={cn("react-calendar-custom", className)}
     />
   )
