@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/Button';
 
 export function AboutSection() {
   return (
-    <section className="py-20 pattern-barbershop">
+    <section id="about" className="py-20 pattern-barbershop">
       <Container>
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           <motion.div

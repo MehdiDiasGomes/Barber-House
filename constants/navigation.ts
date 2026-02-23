@@ -5,7 +5,7 @@ export const navbarConfig: NavbarConfig = {
   links: [
     {
       label: 'Accueil',
-      href: '#',
+      href: '#home',
     },
     {
       label: 'À Propos',
