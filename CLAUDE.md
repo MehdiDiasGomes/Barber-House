@@ -33,7 +33,7 @@ bun run lint
   - `favicon.ico` - Application favicon
 
 - **`/public`** - Static assets
-  - `/images/hero/` - Hero section images (bg.jpg)
+  - `/images/hero/` - Hero section images (bg.webp)
   - `/images/sections/` - Other section images
 
 - **`/components`** - React components
