@@ -15,3 +15,12 @@ export type { TeamMember } from './team';
 
 // Testimonial types
 export type { Testimonial } from './testimonial';
+
+// Booking types
+export type {
+  Booking,
+  BookingFormData,
+  BookingStatus,
+  BookingStep,
+  TimeSlot,
+} from './booking';

@@ -255,3 +255,112 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+/* Booking Calendar Styles (no border-radius) */
+.booking-calendar .react-calendar {
+  width: 100%;
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-gray-200);
+  font-family: inherit;
+}
+
+.booking-calendar .react-calendar__navigation {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.booking-calendar .react-calendar__navigation button {
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  min-width: 44px;
+}
+
+.booking-calendar .react-calendar__navigation button:hover:not(:disabled) {
+  color: var(--color-secondary);
+}
+
+.booking-calendar .react-calendar__navigation button:disabled {
+  color: var(--color-gray-300);
+  cursor: not-allowed;
+}
+
+.booking-calendar .react-calendar__navigation__label {
+  font-weight: 600;
+  font-size: 1rem;
+  flex-grow: 1;
+  text-align: center;
+  color: var(--color-text-primary);
+}
+
+.booking-calendar .react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--color-gray-500);
+}
+
+.booking-calendar .react-calendar__month-view__weekdays__weekday {
+  padding: 0.5rem 0;
+}
+
+.booking-calendar .react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+}
+
+.booking-calendar .react-calendar__tile {
+  padding: 0.75rem 0.5rem;
+  background: var(--color-bg-primary);
+  border: none;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.booking-calendar .react-calendar__tile:hover:not(:disabled) {
+  background: var(--color-gray-100);
+}
+
+.booking-calendar .react-calendar__tile--active,
+.booking-calendar .react-calendar__tile--active:enabled:hover,
+.booking-calendar .react-calendar__tile--active:enabled:focus {
+  background: var(--color-secondary) !important;
+  color: var(--color-text-light) !important;
+}
+
+.booking-calendar .react-calendar__tile--now {
+  background: var(--color-secondary);
+  color: var(--color-text-light);
+  font-weight: 700;
+}
+
+.booking-calendar .react-calendar__tile--now:enabled:hover {
+  background: var(--color-secondary);
+  opacity: 0.9;
+}
+
+.booking-calendar .react-calendar__tile:disabled {
+  background: var(--color-gray-100);
+  color: var(--color-gray-400);
+  cursor: not-allowed;
+}
+
+.booking-calendar .react-calendar__tile--neighboringMonth {
+  color: var(--color-gray-400);
+}
+
+/* Booking Modal Typography */
+.booking-modal-title {
+  color: var(--color-text-primary);
+}
+
+.booking-step-title {
+  color: var(--color-text-primary);
+}
+

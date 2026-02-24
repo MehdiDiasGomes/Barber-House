@@ -2,12 +2,6 @@ import type { Testimonial } from '@/types';
 
 export const testimonialsData: Testimonial[] = [
   {
-    id: 'testimonial-1',
-    name: 'Pierre Dubois',
-    content: 'Excellent service! Les barbiers sont professionnels et attentifs. Je recommande vivement cette barbershop. Mon expérience a été impeccable du début à la fin.',
-    rating: 5,
-  },
-  {
     id: 'testimonial-2',
     name: 'Marc Leblanc',
     content: 'J\'y vais régulièrement depuis 2 ans. L\'ambiance est accueillante et les coupes sont toujours parfaites. Équipe vraiment compétente et sympathique.',

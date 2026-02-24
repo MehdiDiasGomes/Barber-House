@@ -6,9 +6,11 @@ import Link from 'next/link';
 import { navbarConfig } from '@/constants/navigation';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { useBookingContext } from '@/context/BookingContext';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const { openBookingModal } = useBookingContext();
 
   const toggleMenu = (): void => {
     setIsOpen(!isOpen);
@@ -61,7 +63,9 @@ export function Navbar() {
               ))}
             </div>
 
-            <Button variant="navbar">{navbarConfig.ctaButton.label}</Button>
+            <Button variant="navbar" onClick={() => openBookingModal()}>
+              {navbarConfig.ctaButton.label}
+            </Button>
           </div>
 
           <div className="md:hidden">
@@ -101,7 +105,14 @@ export function Navbar() {
                 </a>
               ))}
 
-              <Button variant="navbar" className="w-full text-center mt-2" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="navbar"
+                className="w-full text-center mt-2"
+                onClick={() => {
+                  setIsOpen(false);
+                  openBookingModal();
+                }}
+              >
                 {navbarConfig.ctaButton.label}
               </Button>
             </div>
