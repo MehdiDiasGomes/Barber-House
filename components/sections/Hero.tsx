@@ -2,8 +2,11 @@
 
 import Image from 'next/image';
 import { Button } from '@/components/ui/Button';
+import { useBookingContext } from '@/context/BookingContext';
 
 export function Hero() {
+  const { openBookingModal } = useBookingContext();
+
   const handleScrollToServices = (): void => {
     const element = document.querySelector('#services');
     if (element) {
@@ -43,7 +46,7 @@ export function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button>Prendre Rendez-vous</Button>
+            <Button onClick={() => openBookingModal()}>Prendre Rendez-vous</Button>
             <Button variant="outline" onClick={handleScrollToServices}>Tous les Services</Button>
           </div>
         </div>
@@ -62,7 +65,7 @@ export function Hero() {
 
         <div className="relative z-10 w-full px-4 text-center text-text-light">
           <div className="flex flex-col gap-4 justify-center">
-            <Button>Prendre Rendez-vous</Button>
+            <Button onClick={() => openBookingModal()}>Prendre Rendez-vous</Button>
             <Button variant="outline" onClick={handleScrollToServices}>Tous les Services</Button>
           </div>
         </div>
