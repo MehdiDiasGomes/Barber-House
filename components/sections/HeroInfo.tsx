@@ -65,7 +65,7 @@ export function HeroInfo() {
       <Container>
         <div className="flex flex-col lg:flex-row gap-12 lg:items-end">
           <motion.div
-            className="flex flex-row gap-8 lg:gap-12 justify-center lg:justify-start flex-1"
+            className="flex flex-col max-sm:order-2 sm:flex-row gap-8 lg:gap-12 justify-center lg:justify-start flex-1"
             variants={fadeInUpVariants}
             initial="initial"
             whileInView="whileInView"
@@ -73,21 +73,21 @@ export function HeroInfo() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="text-center lg:text-left flex-1">
-              <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
+              <h3 className="text-3xl lg:text-4xl text-text-primary mb-2">
                 <StatCounter end={6} suffix="" />
               </h3>
               <p className="text-base lg:text-lg text-gray-500">Barbiers Expérimentés</p>
             </div>
 
             <div className="text-center lg:text-left flex-1">
-              <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
+              <h3 className="text-3xl lg:text-4xl text-text-primary mb-2">
                 <StatCounter end={3} suffix="" />
               </h3>
               <p className="text-base lg:text-lg text-gray-500">Emplacements</p>
             </div>
 
             <div className="text-center lg:text-left flex-1">
-              <h3 className="!text-3xl lg:!text-4xl text-text-primary mb-2">
+              <h3 className="text-3xl lg:text-4xl text-text-primary mb-2">
                 <StatCounter end={999} suffix="+" />
               </h3>
               <p className="text-base lg:text-lg text-gray-500">Clients Satisfaits</p>
