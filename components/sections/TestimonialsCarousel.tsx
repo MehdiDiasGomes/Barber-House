@@ -64,11 +64,11 @@ export function TestimonialsCarousel() {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+            <div className="flex gap-8">
               {testimonialsData.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] h-full pr-8"
+                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] h-full"
                 >
                   <motion.div
                     className="h-full"
@@ -89,7 +89,7 @@ export function TestimonialsCarousel() {
           <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-0 md:-translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} className="text-text-primary" />
@@ -98,7 +98,7 @@ export function TestimonialsCarousel() {
           <button
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-0 md:translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} className="text-text-primary" />

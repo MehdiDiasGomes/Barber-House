@@ -191,25 +191,6 @@ Système de couleurs centralisé avec CSS variables pour une maintenance facile:
 
 ---
 
-## 📸 Screenshots
-
-### Hero Section
-![Barber House Hero](/public/images/hero/bg.jpg)
-
-### À Propos
-![À Propos Section](/public/images/about/barber-main.jpg)
-
-### Équipe Professionnelle
-| Team 1 | Team 2 | Team 3 |
-|--------|--------|--------|
-| ![Barber 1](/public/images/team/barber-1.jpg) | ![Barber 2](/public/images/team/barber-2.jpg) | ![Barber 3](/public/images/team/barber-3.jpg) |
-
-| Team 4 | Team 5 | Team 6 |
-|--------|--------|--------|
-| ![Barber 4](/public/images/team/barber-4.jpg) | ![Barber 5](/public/images/team/barber-5.jpg) | ![Barber 6](/public/images/team/barber-6.jpg) |
-
----
-
 ## 🎯 Fonctionnalités Détaillées
 
 ### 🔄 Animations Scroll

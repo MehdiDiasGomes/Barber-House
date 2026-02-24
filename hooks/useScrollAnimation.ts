@@ -28,16 +28,28 @@ export function useScrollAnimation(yOffset: number = 30): AnimationVariants {
   };
 }
 
+/**
+ * Fade-in animation with upward slide on scroll trigger.
+ * Elements fade in while sliding up 30px from initial position.
+ */
 export const fadeInUpVariants = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
 };
 
+/**
+ * Simple fade-in animation on scroll trigger.
+ * Elements fade in without vertical movement.
+ */
 export const fadeInVariants = {
   initial: { opacity: 0 },
   whileInView: { opacity: 1 },
 };
 
+/**
+ * Container animation with staggered children animation.
+ * Parent fades in while children animate with 0.1s stagger delay and 0.2s initial delay.
+ */
 export const staggerContainerVariants = {
   initial: { opacity: 0 },
   whileInView: {
@@ -49,6 +61,10 @@ export const staggerContainerVariants = {
   },
 };
 
+/**
+ * Individual item animation for staggered effect.
+ * Each item fades in while sliding up 20px, typically used within stagger container.
+ */
 export const staggerItemVariants = {
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },

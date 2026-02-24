@@ -21,7 +21,10 @@ export function Navbar() {
       if (href !== '#') {
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const isMobile = window.innerWidth < 768;
+          const offset = isMobile ? 300 : 80;
+          const offsetTop = element.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
       }
       setIsOpen(false);
@@ -29,7 +32,7 @@ export function Navbar() {
   };
 
   return (
-    <nav className="bg-primary text-text-light fixed top-0 w-full z-50">
+    <nav className="bg-primary text-text-light sticky top-0 z-50">
       <Container className="py-4">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
