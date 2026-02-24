@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
 import { navbarConfig } from '@/constants/navigation';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
@@ -22,7 +21,10 @@ export function Navbar() {
       if (href !== '#') {
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          const isMobile = window.innerWidth < 768;
+          const offset = isMobile ? 300 : 80;
+          const offsetTop = element.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
       }
       setIsOpen(false);
@@ -85,37 +87,26 @@ export function Navbar() {
           </div>
         </div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              className="md:hidden mt-4 pb-4 border-t border-gray-600 overflow-hidden"
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
-            >
-              <div className="flex flex-col gap-4 py-4">
-                {navbarConfig.links.map((link) => (
-                  <motion.a
-                    key={link.href}
-                    href={link.href}
-                    onClick={handleNavClick}
-                    className="text-sm font-montserrat hover:text-secondary transition-colors uppercase tracking-wider"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    {link.label}
-                  </motion.a>
-                ))}
+        {isOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-600">
+            <div className="flex flex-col gap-4 py-4">
+              {navbarConfig.links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={handleNavClick}
+                  className="text-sm font-montserrat hover:text-secondary transition-colors uppercase tracking-wider"
+                >
+                  {link.label}
+                </a>
+              ))}
 
-                <Button variant="navbar" className="w-full text-center mt-2" onClick={() => setIsOpen(false)}>
-                  {navbarConfig.ctaButton.label}
-                </Button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <Button variant="navbar" className="w-full text-center mt-2" onClick={() => setIsOpen(false)}>
+                {navbarConfig.ctaButton.label}
+              </Button>
+            </div>
+          </div>
+        )}
       </Container>
     </nav>
   );
