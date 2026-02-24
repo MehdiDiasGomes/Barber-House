@@ -89,7 +89,7 @@ export function TestimonialsCarousel() {
           <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-0 md:-translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} className="text-text-primary" />
@@ -98,7 +98,7 @@ export function TestimonialsCarousel() {
           <button
             onClick={scrollNext}
             disabled={!canScrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-0 md:translate-x-14 p-2 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} className="text-text-primary" />
