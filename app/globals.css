@@ -8,7 +8,7 @@ html {
 :root {
   /* Brand Colors */
   --color-primary: #1a1a1a;
-  --color-secondary: #d97706;
+  --color-secondary: #d4af37;
 
   /* Neutral Colors */
   --color-white: #ffffff;
@@ -71,7 +71,7 @@ html {
     --background: #0a0a0a;
     --foreground: #ededed;
     --primary: #ffffff;
-    --secondary: #d97706;
+    --secondary: #d4af37;
   }
 }
 
