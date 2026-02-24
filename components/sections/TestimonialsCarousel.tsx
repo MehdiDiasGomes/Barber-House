@@ -64,11 +64,11 @@ export function TestimonialsCarousel() {
 
         <div className="relative">
           <div className="overflow-hidden" ref={emblaRef}>
-            <div className="flex">
+            <div className="flex gap-8">
               {testimonialsData.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] h-full pr-8"
+                  className="flex-[0_0_100%] md:flex-[0_0_calc(50%-1rem)] lg:flex-[0_0_calc(33.333%-1.33rem)] h-full"
                 >
                   <motion.div
                     className="h-full"
