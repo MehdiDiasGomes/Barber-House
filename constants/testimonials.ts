@@ -2,33 +2,38 @@ import type { Testimonial } from '@/types';
 
 export const testimonialsData: Testimonial[] = [
   {
-    id: 'testimonial-2',
+    id: 'testimonial-1',
     name: 'Marc Leblanc',
-    content: 'J\'y vais régulièrement depuis 2 ans. L\'ambiance est accueillante et les coupes sont toujours parfaites. Équipe vraiment compétente et sympathique.',
+    role: 'Client fidèle depuis 2 ans',
+    content: 'Chaque visite est un moment à part. L\'équipe prend le temps d\'écouter, et le résultat dépasse toujours mes attentes. Je ne vais plus nulle part ailleurs.',
+    rating: 5,
+  },
+  {
+    id: 'testimonial-2',
+    name: 'Jean Bernard',
+    role: 'Architecte',
+    content: 'Un savoir-faire rare. La coupe est précise, la barbe taillée au millimètre. En 20 minutes, ils transforment complètement votre allure.',
     rating: 5,
   },
   {
     id: 'testimonial-3',
-    name: 'Jean Bernard',
-    content: 'Service rapide et efficace. Les barbiers connaissent leur métier et vous proposent des styles qui vous conviennent. Très satisfait de ma visite!',
+    name: 'Thomas Moreau',
+    role: 'Entrepreneur',
+    content: 'L\'endroit idéal avant un entretien ou un événement important. On repart avec une confiance renouvelée. L\'ambiance du lieu, le soin apporté — tout est soigné.',
     rating: 5,
   },
   {
     id: 'testimonial-4',
-    name: 'Thomas Moreau',
-    content: 'Barbershop moderne avec une excellente hygiène. Les prix sont justes et le résultat est toujours au rendez-vous. Je recommande sans hésiter!',
+    name: 'David Laurent',
+    role: 'Designer',
+    content: 'Ma première visite m\'a suffi pour comprendre que c\'est ici que ça se passe. Le barbier a su lire mon style en deux questions. Résultat impeccable.',
     rating: 5,
   },
   {
     id: 'testimonial-5',
-    name: 'David Laurent',
-    content: 'Première visite et j\'ai été impressionné par la qualité du travail. Le barbier a écouté mes demandes et proposé les meilleures solutions pour moi.',
-    rating: 5,
-  },
-  {
-    id: 'testimonial-6',
     name: 'Nicolas Fournier',
-    content: 'Cadre élégant, service professionnel et coupe impeccable. C\'est une référence en barbering. Définitivement mon choix pour tous mes rendez-vous!',
+    role: 'Médecin',
+    content: 'Cadre soigné, équipe professionnelle, coupe parfaite à chaque fois. C\'est devenu mon rituel mensuel. Je recommande à tous les hommes qui veulent le meilleur.',
     rating: 5,
   },
 ];
